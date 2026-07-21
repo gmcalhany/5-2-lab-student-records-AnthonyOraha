@@ -8,7 +8,7 @@ bool isValidStudentId(string id) {
     // A valid ID should have at least 3 characters.
     // A valid ID should start with an uppercase letter.
     // Hint: You may compare characters directly, such as id[0] >= 'A'.
-    if(id.length() < DEFAULT_STUDENT_COUNT) return false;
+    if(id.length() < 3) return false;
     if(id[0] < 'A' || id[0] > 'Z') return false;
     return true;
 }
@@ -42,11 +42,12 @@ double calculateAverageScore(const Student students[], int size) {
     // If the array is null or size is invalid, return 0.0.
     // Otherwise, return the average score.
     if(size <= 0 || students == nullptr) return 0.0;
-    int total = 0;
-    for(int i = 0; i < size; i++) total += students[i].score;
-    return double(total)/size;
+    double total = 0.0;
+    for (int i = 0; i < size; i++) {
+         total += students[i].score;
 }
-
+return total / size;
+}
 double findHighestScore(const Student students[], int size) {
     // TODO:
     // If the array is null or size is invalid, return 0.0.
